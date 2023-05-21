@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TripsAway</title>
+        <link rel="stylesheet" href="https://cdn.jsde">
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style1.css">
+        <script>
+
+          function validateform(){  
+              var name=document.getElementById('name'); 
+              var phone=document.getElementById('number'); 
+              var email=document.getElementById('email'); 
+              var password=document.getElementById('password');
+              var password1=document.getElementById('password1');
+              
+              
+              if (name.value==null || name.value==""){  
+                alert("Name can't be blank");  
+                return false;  
+              }
+              if (phone.value==null || phone.value==""){  
+                alert("enter phoneno");  
+                return false;  
+              }
+            
+              
+              if (email.value==null || email.value==""){  
+                  alert("Enter your Email");  
+                  return false;
+                  
+              }
+              if (password.value == "") 
+              {
+                      alert("Please enter your password");
+                      password.focus();
+                      return false;
+              }
+              
+              
+              if(password.length!= ""){
+                     var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;                
+                      if(regex.test(password.value) === false) 
+                      {    alert("Please enter a valid pwd");
+                              return false;
+                      }       
+              }
+              if(password.value != password1.value){
+                  alert("Password mismatch");
+                      return false;
+              }
+              if(phone.length!= ""){
+                          var regex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;                
+                              if(regex.test(phone.value) === false) 
+                               {    alert("Enter a valid 10 digit ");
+                                     return false;
+                                }   
+                              else{
+                                        return true;
+                                  } 
+                              }
+              if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))
+              {
+              return (true)
+              }
+              else{
+              alert("You have entered an invalid email address!")
+              return (false)
+              } 
+          }
+
+
+          function start(x)
+	{
+	document.getElementById("help").addEventListener("mousemove", moveone, false );
+	document.getElementById("help").addEventListener("mouseout", leaveone, false );
+	}
+	
+	function moveone()
+	{
+	document.getElementById("help").innerHTML ="Need help?";
+	}
+
+	function leaveone()
+	{
+	document.getElementById("help").innerHTML ="?";
+	}
+	window.addEventListener( "load", start, false );
+
+
+
+
+
+
+  
+
+
+          </script>
+
+    </head>
+    <body>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#"><span class="text-success">Trips</span>Away</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="homenew.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Destinations
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="assam.html">Assam</a></li>
+                  <li><a class="dropdown-item" href="goa.html">Goa</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="alldesti.html">See all &#8594</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="newsignup.html">Sign-Up</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <div id="help" onmouseenter="start()">?</div>
+                </a>
+              </li>
+
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="newbg.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+              <h5 id="read"><span class="text-white">Find your travel destination with us!</span></h5>
+              
+              <p><a href="#" class="btn btn-success mt3">Learn More</a></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="newbgpic.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+              <h5><span class="text-white">Travel according to your mood!</span></h5>
+              
+              <p><a href="#" class="btn btn-success mt3">Learn More</a></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="pic3.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption">
+              <h5><span class="text-white">Share your stories with us!</span></h5>
+              
+              <p><a href="#" class="btn btn-success mt3">Learn More</a></p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+      <section id="about" class="about section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-12 col-12">
+              <div class="about-img">
+                <img src="fp2.jpg" class="img-fluid " id="new1">
+              </div>
+            </div>
+            <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+              <div class="about-text">
+                <h2 id="why">Why?</h2>
+                <p>Nurtured from the seed of a single idea to empower the traveller with easy & instant travel bookings providing comprehensive choices’, TripsAway is a pioneer in India’s online travel guide space. Founded by Sahana in the year 2023, TripsAway began its journey by serving the India travel market with best travel guide services, powered by robust technology and round-the-clock customer support.</p>
+                <a href="#" class="btn btn-success">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script src="new.js"></script>
+
+      <section id="services" class="services section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-header text-center pb-5">
+                <h2>Don't know what to do next?</h2>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-md-12 col-lg-4">
+              <div class="card text-white text-center bg-dark pb-2">
+                <div class="card-body">
+                  <h3 class="card-title">Are you a foodie in food hunt?</h3>
+                  <p class="lead">We offer a guide for various places with it's signature restaurants!!</p>
+                  <button class="btn btn-success text-dark">Read More</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12 col-lg-4">
+              <div class="card text-white text-center bg-dark pb-2">
+                <div class="card-body">
+                  <h3 class="card-title">In search of inner peace?</h3>
+                  <p class="lead">Check out the perfect places for solo bike travel with eye-catching sceneries!</p>
+                  <button class="btn btn-success text-dark">Read More</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-12 col-lg-4">
+              <div class="card text-white text-center bg-dark pb-2">
+                <div class="card-body">
+                  <h3 class="card-title">Planned a family trip for this summer?</h3>
+                  <p class="lead">TripsAway is here for a perfect holiday planner! Check out for more!!</p>
+                  <button class="btn btn-success text-dark">Read More</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       
+      <section id="contact" class="contact section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-header text-center pb-5">
+                <h2>Already a member?</h2>
+                <h3>Sign-In for daily updates!</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="row m-0">
+            <div class="col-md-12 p-0 pt-4 pb-4">
+              <form action="http://localhost:3000/login" class="bg-transparent p-4.m-auto" method="POST">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Enter Name</label>
+                      <input type="text" class="form-control"id="name" name="username" placeholder="Your full name">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Enter Email address</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Your Email Here">
+                    </div>
+                  </div>
+  
+                  <div class="col-md-12 form-group">
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                    </div>
+                  </div>
+  
+                  <button class="btn btn-success btn-lg btn-block mt-3" onclick="return validateform()" class="form-control">Sign-In</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <footer class="bg-light p-2 text center">
+        <div class="container">
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+
+          </div>
+        </div>
+      </footer>
+      
+    
+      
+
+
+          
+
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+          
+
+     
+
+
+        
+    </body>
+</html>

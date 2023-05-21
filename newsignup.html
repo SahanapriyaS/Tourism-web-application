@@ -1,0 +1,168 @@
+<html>  
+<head>  
+  <title> SignUp Page</title>  
+  <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+        <link rel="stylesheet" href="https://cdn.jsde">
+        <link rel="stylesheet" href="signup.css">
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+       
+
+ <script type="text/javascript">  
+         
+         function start(x)
+	{
+	document.getElementById("help").addEventListener("mousemove", moveone, false );
+	document.getElementById("help").addEventListener("mouseout", leaveone, false );
+	}
+	
+	function moveone()
+	{
+	document.getElementById("help").innerHTML ="Need help?";
+	}
+
+	function leaveone()
+	{
+	document.getElementById("help").innerHTML ="?";
+	}
+	window.addEventListener( "load", start, false );
+
+
+
+
+
+
+
+
+                function returnhome(){
+                        window.location="homenew.html"
+                }
+                
+                function create_account(){  
+                var n=document.getElementById("n1").value;  
+                var e=document.getElementById("e1").value;  
+                var p=document.getElementById("p1").value;  
+                var cp=document.getElementById("p2").value;  
+                //Code for password validation  
+                        var letters = /^[A-Za-z]+$/;  
+                        var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;  
+                //other validations required code  
+                if(n==''||e==''||p==''||cp==''){  
+                alert("Enter each details correctly");  
+                }  
+                else if(!letters.test(n))  
+                        {  
+                            alert('Name is incorrect must contain alphabets only');  
+                        }  
+                else if (!email_val.test(e))  
+                        {  
+                            alert('Invalid email format please enter valid email id');  
+                        }  
+                else if(p!=cp)  
+                {  
+                alert("Passwords not matching");  
+                }  
+                else if(document.getElementById("p1").value.length > 12)  
+                {  
+                alert("Password maximum length is 12");  
+                }  
+                else if(document.getElementById("p1").value.length < 6)  
+                {  
+                alert("Password minimum length is 6");  
+                }  
+                // else{  
+                // alert("Your account has been created successfully... Redirecting to HomePage");  
+                // window.location="homenew.html";  
+                // }  
+                }  
+ </script> 
+
+
+</head>  
+<body>  
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <div class="container">
+                  <a class="navbar-brand" href="#"><span class="text-success">Trips</span>Away</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link" href="homenew.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Destinations
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="assam.html">Assam</a></li>
+                          <li><a class="dropdown-item" href="goa.html">Goa</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="alldesti.html">See all &#8594</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="newsignup.html">Sign-Up</a>
+                      </li>
+        
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <div id="help" onmouseenter="start()">?</div>
+                        </a>
+                      </li>
+        
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+
+
+
+
+
+
+
+
+
+
+
+<form action="http://localhost:3000/save" method="POST">
+
+<div class="table1">
+    
+
+
+   <table cellspacing="4" cellpadding="12" color="#c8e9ca">  
+     <tr> <td><span class="title">CREATE YOUR ACCOUNT NOW !!</span></td></tr> 
+     <tr><td> Name</td>   
+     <td><input type="text" placeholder="Enter your name" id="n1" name="username"></td></tr>  
+     <tr><td>Email </td>  
+     <td><input type="text" placeholder="Enter your email id" id="e1" name="email"></td></tr>  
+     <tr><td> Set Password</td>  
+     <td><input type="password" placeholder="Set a password" id="p1" name="password"></td></tr>  
+     <tr><td>Confirm Password</td>  
+     <td><input type="password" placeholder="Confirm your password" id="p2" name="password1"></td></tr>  
+     <tr><td>  
+     <input type="submit" value="Create" onClick="create_account()" >
+     <input type="submit" value="Back" onClick="returnhome()"/>  
+   </table>  
+</div>
+
+
+</form>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+</body>  
+</html>  

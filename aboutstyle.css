@@ -1,0 +1,69 @@
+*{
+    font-family: century gothic;
+  }
+  body{
+    background: #c8e9ca;
+  }
+  .section-padding{
+    padding: 100px 0;
+  }
+  .navbar-nav a{
+    font-size: 15px;
+    font-weight: 700;
+  }
+   .navbar-light .navbar-brand{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  
+  .navbar-light .navbar-brand:focus,
+  .navbar-light .navbar-brand:hover{
+    color: black;
+  }
+  
+  .navbar-light .navbar-nav .navbar-link{
+    color: black;
+  }
+   .w-100{
+    height: 100vh;
+  }
+  
+  
+  .services .card-body i{
+    font-size: 50px;
+  }
+
+  @media only screen and (max-width: 767px){
+    .navbar-nav{
+      text-align: center;
+    }
+}
+
+.about-box{
+    padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+.outer-box{
+  box-sizing: border-box;
+  width: 50%;
+  height:100px;
+  border:2px;
+  border-left: 1px;
+}
+.outer-box .card-title{
+  
+  font-weight: bold;
+}
+
+.box2{
+  box-sizing: border-box;
+  width: 50%;
+  margin-left: 50%;
+}
+
